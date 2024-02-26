@@ -1,0 +1,29 @@
+// models/user.js
+module.exports = function (sequelize, DataTypes) {
+    const Role = sequelize.define(
+      "userroles",
+      {
+        role_id: {
+          type: DataTypes.INTEGER,
+          autoIncrement: true,
+          primaryKey: true,
+        },
+        role_name: {
+          type: DataTypes.STRING,
+          allowNull: false,
+        },
+        role_description: {
+         type : DataTypes.JSON ,
+         allowNull : true,
+         defaultValue : null ,         
+        }
+      },
+      {
+        timestamps: true,
+        underscored: true,
+      }
+    );
+  
+    return Role;
+  };
+      
